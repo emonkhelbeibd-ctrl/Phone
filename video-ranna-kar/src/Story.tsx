@@ -235,7 +235,7 @@ const S10: React.FC = () => {
       <Cam>
         <Char who="simi" x={SX} y={FY} pose="crossed" face="smug" />
         <Char who="emon" x={EX} y={FY} flip pose="shrug" face="neutral" />
-        <PopIn x={EX - 40} y={430} delay={at(20.4)}>
+        <PopIn x={EX - 210} y={380} delay={at(20.4)}>
           <Bubble w={130} h={120} tail="right">?</Bubble>
         </PopIn>
       </Cam>
