@@ -60,7 +60,6 @@ export const Person: React.FC<{
       <path d="M124 74 Q150 52 196 66" fill="none" stroke="#3A3440" strokeWidth={4} strokeLinecap="round" />
       {eyes}
       <path d="M150 122 Q160 134 148 138" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
-      <circle cx={160} cy={134} r={4} fill="#F4E7B0" stroke={C.ink} strokeWidth={2} />
       <circle cx={196} cy={126} r={3.5} fill="#5A3A2A" />
       <g fill="#EE8F84" opacity={0.5}>
         <ellipse cx={104} cy={146} rx={13} ry={8} />
