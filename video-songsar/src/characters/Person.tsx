@@ -104,7 +104,13 @@ export const Person: React.FC<{
       )}
       <rect x={134} y={176} width={32} height={30} fill={skin} stroke={C.ink} strokeWidth={5} />
       <path d={sit ? 'M90 200 Q150 184 210 200 L248 612 L52 612 Z' : 'M90 200 Q150 184 210 200 L240 742 L60 742 Z'} fill={L.dress} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-      {sit && <path d="M70 440 Q150 470 230 440" fill="none" stroke="#3A3842" strokeWidth={5} />}
+      {sit && (
+        <g>
+          <ellipse cx={110} cy={462} rx={50} ry={34} fill={L.dress} stroke={C.ink} strokeWidth={5} />
+          <ellipse cx={190} cy={462} rx={50} ry={34} fill={L.dress} stroke={C.ink} strokeWidth={5} />
+          <rect x={64} y={440} width={172} height={30} fill={L.dress} />
+        </g>
+      )}
       <path d="M122 194 L150 250 L178 194 Z" fill={skin} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
       {[0, 1, 2, 3, 4, 5].map((i) => (
         <g key={i}>
@@ -125,10 +131,11 @@ export const Person: React.FC<{
     <g>
       {sit ? (
         <>
-          <rect x={92} y={440} width={56} height={170} rx={18} fill={L.pants} stroke={C.ink} strokeWidth={5} />
-          <rect x={152} y={440} width={56} height={170} rx={18} fill={L.pants} stroke={C.ink} strokeWidth={5} />
-          <ellipse cx={118} cy={614} rx={34} ry={15} fill="#1E1A18" />
-          <ellipse cx={182} cy={614} rx={34} ry={15} fill="#1E1A18" />
+          {/* shins hanging down from the knees */}
+          <rect x={92} y={470} width={46} height={150} rx={16} fill={L.pants} stroke={C.ink} strokeWidth={5} />
+          <rect x={162} y={470} width={46} height={150} rx={16} fill={L.pants} stroke={C.ink} strokeWidth={5} />
+          <ellipse cx={112} cy={624} rx={34} ry={15} fill="#1E1A18" />
+          <ellipse cx={188} cy={624} rx={34} ry={15} fill="#1E1A18" />
         </>
       ) : (
         <>
@@ -145,6 +152,14 @@ export const Person: React.FC<{
       <path d="M116 200 L150 400 L104 300 L122 260 Z" fill={L.blazerDark} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
       <path d="M184 200 L150 400 L196 300 L178 260 Z" fill={L.blazerDark} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
       <circle cx={150} cy={430} r={6} fill={C.ink} />
+      {sit && (
+        <g>
+          {/* thighs/lap toward the camera, with knees */}
+          <rect x={76} y={404} width={76} height={92} rx={36} fill={L.pants} stroke={C.ink} strokeWidth={5} />
+          <rect x={148} y={404} width={76} height={92} rx={36} fill={L.pants} stroke={C.ink} strokeWidth={5} />
+          <path d="M96 470 Q114 482 132 470 M168 470 Q186 482 204 470" fill="none" stroke="#3B4A6A" strokeWidth={4} strokeLinecap="round" />
+        </g>
+      )}
     </g>
   );
 
