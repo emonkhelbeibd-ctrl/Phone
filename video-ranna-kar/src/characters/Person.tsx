@@ -27,18 +27,17 @@ type Who = 'emon' | 'simi';
 
 const LOOK = {
   emon: {
-    shirt: '#6E6650', // olive body
-    sleeve: '#F2F0EA', // white raglan sleeves
-    pants: '#E6DDC6',
-    cap: '#1F2D4A',
-    skin: '#B57D55',
+    blazer: '#1F3358',
+    blazerDark: '#162644',
+    shirt: '#FAFAF7',
+    pants: '#26324A',
+    skin: '#EDBF9C',
   },
   simi: {
-    dress: '#F4F0F2', // white with black lattice
-    hijab: '#C9A6D6',
-    hijabDark: '#B08BC2',
-    under: '#C9A07E',
-    skin: '#BE8763',
+    dress: '#1B1A1F', // black kameez with gold/silver work
+    gold: '#D9B45A',
+    silver: '#D8D8DC',
+    skin: '#EBBB96',
   },
 };
 
@@ -195,48 +194,38 @@ export const Person: React.FC<{
 
   const head = isSimi ? (
     <g>
-      {/* hijab: hood + cape over shoulders */}
-      <path d="M150 14 Q58 14 56 132 Q52 220 74 286 L58 392 Q150 426 242 392 L226 286 Q248 220 244 132 Q242 14 150 14 Z" fill={L.hijab} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-      <path d="M100 250 Q150 300 200 250" fill="none" stroke={L.hijabDark} strokeWidth={5} strokeLinecap="round" />
-      <path d="M90 320 Q150 360 210 320" fill="none" stroke={L.hijabDark} strokeWidth={5} strokeLinecap="round" />
-      <ellipse cx={150} cy={124} rx={62} ry={70} fill={skin} stroke={C.ink} strokeWidth={5} />
-      {/* under-scarf band on the forehead */}
-      <path d="M92 90 Q150 52 208 90 Q150 72 92 90 Z" fill="#DDBB96" stroke={C.ink} strokeWidth={3} strokeLinejoin="round" />
-      <g transform="translate(0,12)">
-        <Brows face={face} />
-        <Eye cx={124} face={face} side="l" skin={skin} look={look} />
-        <Eye cx={176} face={face} side="r" skin={skin} look={look} />
-        <path d="M150 122 Q160 134 148 138" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
-        {/* nose stud */}
-        <circle cx={160} cy={134} r={4} fill="#F4E7B0" stroke={C.ink} strokeWidth={2} />
-        <g fill="#E58C7A" opacity={0.5}>
-          <ellipse cx={106} cy={146} rx={12} ry={7} />
-          <ellipse cx={194} cy={146} rx={12} ry={7} />
-        </g>
-        <Mouth face={face} talk={talk} />
+      <ellipse cx={150} cy={116} rx={70} ry={78} fill={skin} stroke={C.ink} strokeWidth={5} />
+      {/* side-parted straight hair */}
+      <path d="M76 132 Q66 30 150 28 Q236 30 226 132 Q220 84 196 66 Q160 58 124 74 Q94 92 76 132 Z" fill="#17141A" stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M124 74 Q150 52 196 66" fill="none" stroke="#3A3440" strokeWidth={4} strokeLinecap="round" />
+      <Brows face={face} />
+      <Eye cx={122} face={face} side="l" skin={skin} look={look} />
+      <Eye cx={178} face={face} side="r" skin={skin} look={look} />
+      <path d="M150 122 Q160 134 148 138" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
+      <circle cx={160} cy={134} r={4} fill="#F4E7B0" stroke={C.ink} strokeWidth={2} />
+      <circle cx={196} cy={126} r={3.5} fill="#5A3A2A" />
+      <g fill="#E58C7A" opacity={0.45}>
+        <ellipse cx={104} cy={146} rx={13} ry={8} />
+        <ellipse cx={196} cy={148} rx={13} ry={8} />
       </g>
+      <Mouth face={face} talk={talk} />
     </g>
   ) : (
     <g>
       <circle cx={80} cy={118} r={14} fill={skin} stroke={C.ink} strokeWidth={5} />
       <circle cx={220} cy={118} r={14} fill={skin} stroke={C.ink} strokeWidth={5} />
       <ellipse cx={150} cy={112} rx={72} ry={78} fill={skin} stroke={C.ink} strokeWidth={5} />
-      {/* short hair at the sides under the cap */}
-      <path d="M80 70 L80 112 L92 104 L92 70 Z" fill="#1E1A18" />
-      <path d="M220 70 L220 112 L208 104 L208 70 Z" fill="#1E1A18" />
-      {/* beard along the jaw */}
-      <path d="M82 116 Q82 194 150 199 Q218 194 218 116 L211 122 Q208 180 150 186 Q92 180 89 122 Z" fill="#2E2420" />
-      <path d="M132 176 Q150 184 168 176 L166 190 Q150 194 134 190 Z" fill="#2E2420" />
-      {/* cap */}
-      <path d="M74 84 Q74 6 150 6 Q226 6 226 84 Z" fill={L.cap} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-      <path d="M150 8 L150 84" stroke="#2C3D60" strokeWidth={4} />
-      <ellipse cx={150} cy={86} rx={88} ry={15} fill="#17223A" stroke={C.ink} strokeWidth={5} />
-      <circle cx={150} cy={46} r={14} fill="#DCE6F2" stroke={C.ink} strokeWidth={3} />
+      {/* full trimmed beard */}
+      <path d="M80 108 Q78 204 150 208 Q222 204 220 108 L210 116 Q206 176 150 182 Q94 176 90 116 Z" fill="#221C1A" />
+      <path d="M126 172 Q150 182 174 172 L170 200 Q150 206 130 200 Z" fill="#221C1A" />
+      {/* thick swept hair */}
+      <path d="M76 106 Q62 22 150 14 Q240 18 224 106 Q220 66 196 54 Q160 42 118 50 Q86 62 76 106 Z" fill="#17141A" stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M104 40 Q150 2 214 44" fill="none" stroke="#17141A" strokeWidth={16} strokeLinecap="round" />
       <Brows face={face} />
       <Eye cx={122} face={face} side="l" skin={skin} look={look} />
       <Eye cx={178} face={face} side="r" skin={skin} look={look} />
       <path d="M150 122 Q160 134 148 138" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
-      <path d="M124 147 Q150 138 176 147" fill="none" stroke="#1E1A18" strokeWidth={8} strokeLinecap="round" />
+      <path d="M122 148 Q150 136 178 148" fill="none" stroke="#221C1A" strokeWidth={9} strokeLinecap="round" />
       <Mouth face={face} talk={talk} />
     </g>
   );
@@ -252,10 +241,25 @@ export const Person: React.FC<{
       </defs>
       {isSimi ? (
         <g>
+          {/* long hair behind the shoulders */}
+          <path d="M80 110 Q60 220 70 310 Q150 330 230 310 Q240 220 220 110 Z" fill="#17141A" stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
           <ellipse cx={118} cy={748} rx={30} ry={14} fill="#1E1A18" />
           <ellipse cx={182} cy={748} rx={30} ry={14} fill="#1E1A18" />
-          <path d="M90 200 Q150 184 210 200 L240 742 L60 742 Z" fill="url(#lattice)" stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-          <path d="M62 716 L238 716 L240 742 L60 742 Z" fill="#1E1A18" />
+          <rect x={134} y={176} width={32} height={30} fill={skin} stroke={C.ink} strokeWidth={5} />
+          <path d="M90 200 Q150 184 210 200 L240 742 L60 742 Z" fill={L.dress} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M122 194 L150 250 L178 194 Z" fill={skin} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <g key={i}>
+              <line x1={104} y1={250 + i * 34} x2={134} y2={268 + i * 34} stroke={L.silver} strokeWidth={4} strokeDasharray="5 5" />
+              <line x1={196} y1={250 + i * 34} x2={166} y2={268 + i * 34} stroke={L.silver} strokeWidth={4} strokeDasharray="5 5" />
+            </g>
+          ))}
+          <path d="M122 194 L150 250 L178 194" fill="none" stroke={L.gold} strokeWidth={5} strokeDasharray="3 6" strokeLinecap="round" />
+          {Array.from({length: 14}).map((_, i) => (
+            <circle key={i} cx={80 + (i % 7) * 23 + (i > 6 ? 11 : 0)} cy={i > 6 ? 690 : 666} r={4} fill={L.gold} />
+          ))}
+          <path d="M136 208 Q150 222 164 208" fill="none" stroke={L.gold} strokeWidth={3} />
+          <rect x={144} y={218} width={12} height={14} rx={2} fill="#B3243A" stroke={L.gold} strokeWidth={3} />
         </g>
       ) : (
         <g>
@@ -264,17 +268,18 @@ export const Person: React.FC<{
           <ellipse cx={118} cy={740} rx={32} ry={15} fill="#1E1A18" />
           <ellipse cx={186} cy={740} rx={32} ry={15} fill="#1E1A18" />
           <rect x={134} y={176} width={32} height={28} fill={skin} stroke={C.ink} strokeWidth={5} />
-          <path d="M86 205 Q150 184 214 205 L218 470 L82 470 Z" fill={L.shirt} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-          {/* white raglan shoulders */}
-          <path d="M86 205 Q110 196 128 194 L104 290 L86 260 Z" fill={L.sleeve} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
-          <path d="M214 205 Q190 196 172 194 L196 290 L214 260 Z" fill={L.sleeve} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
-          <path d="M126 194 Q150 216 174 194" fill="none" stroke={L.sleeve} strokeWidth={10} strokeLinecap="round" />
-          <path d="M120 192 Q150 224 180 192" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
+          <path d="M86 205 Q150 184 214 205 L218 476 L82 476 Z" fill={L.blazer} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M124 196 L176 196 L160 400 L140 400 Z" fill={L.shirt} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M124 196 L150 230 L138 244 Z M176 196 L150 230 L162 244 Z" fill={L.shirt} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M116 200 L150 400 L104 300 L122 260 Z" fill={L.blazerDark} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M184 200 L150 400 L196 300 L178 260 Z" fill={L.blazerDark} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          <circle cx={150} cy={430} r={6} fill={C.ink} />
+          <line x1={170} y1={420} x2={204} y2={414} stroke={C.ink} strokeWidth={4} />
         </g>
       )}
       {!handsOnHead && head}
-      <Arm p={la} sleeve={isSimi ? L.dress : L.sleeve} skin={skin} short={!isSimi} />
-      <Arm p={ra} sleeve={isSimi ? L.dress : L.sleeve} skin={skin} short={!isSimi} />
+      <Arm p={la} sleeve={isSimi ? L.dress : L.blazer} skin={skin} />
+      <Arm p={ra} sleeve={isSimi ? L.dress : L.blazer} skin={skin} />
       {handsOnHead && (
         <>
           {head}
