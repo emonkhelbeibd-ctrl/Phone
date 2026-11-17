@@ -73,13 +73,18 @@ export const Person: React.FC<{
       <circle cx={80} cy={118} r={14} fill={skin} stroke={C.ink} strokeWidth={5} />
       <circle cx={220} cy={118} r={14} fill={skin} stroke={C.ink} strokeWidth={5} />
       <ellipse cx={150} cy={112} rx={72} ry={78} fill={skin} stroke={C.ink} strokeWidth={5} />
-      <path d="M80 108 Q78 204 150 208 Q222 204 220 108 L210 116 Q206 176 150 182 Q94 176 90 116 Z" fill="#221C1A" />
-      <path d="M126 172 Q150 182 174 172 L170 200 Q150 206 130 200 Z" fill="#221C1A" />
+      {/* very short, light stubble along the jaw */}
+      <path d="M82 118 Q84 188 150 192 Q216 188 218 118 L212 124 Q206 176 150 180 Q94 176 88 124 Z" fill="#4A3A34" opacity={0.28} />
+      <path d="M132 172 Q150 180 168 172 L164 186 Q150 190 136 186 Z" fill="#4A3A34" opacity={0.25} />
       <path d="M76 106 Q62 22 150 14 Q240 18 224 106 Q220 66 196 54 Q160 42 118 50 Q86 62 76 106 Z" fill="#17141A" stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-      <path d="M104 40 Q150 2 214 44" fill="none" stroke="#17141A" strokeWidth={16} strokeLinecap="round" />
+      <path d="M110 38 Q160 -6 216 46" fill="none" stroke="#17141A" strokeWidth={20} strokeLinecap="round" />
       {eyes}
       <path d="M150 122 Q160 134 148 138" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
-      <path d="M122 148 Q150 136 178 148" fill="none" stroke="#221C1A" strokeWidth={9} strokeLinecap="round" />
+      <path d="M128 147 Q150 141 172 147" fill="none" stroke="#4A3A34" strokeWidth={4} strokeLinecap="round" opacity={0.45} />
+      <g fill="#EE8F84" opacity={0.32}>
+        <ellipse cx={102} cy={146} rx={13} ry={8} />
+        <ellipse cx={198} cy={146} rx={13} ry={8} />
+      </g>
       <Mouth face={face} talk={talk} />
     </g>
   );

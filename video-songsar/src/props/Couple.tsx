@@ -87,8 +87,8 @@ export const Balance: React.FC<{size?: number; tilt?: number; left?: string; rig
       <rect x={250} y={620} width={260} height={40} rx={12} fill="#8C6A2A" {...ink} />
       <line x1={L.x} y1={L.y} x2={R.x} y2={R.y} stroke="#B9852A" strokeWidth={18} strokeLinecap="round" />
       <circle cx={380} cy={210} r={22} fill="#E7B23F" {...ink} />
-      {pan(L, left, '#FFE9C9')}
-      {pan(R, right, '#FFE9C9')}
+      {pan(L, left, '#2A2420')}
+      {pan(R, right, '#2A2420')}
     </svg>
   );
 };

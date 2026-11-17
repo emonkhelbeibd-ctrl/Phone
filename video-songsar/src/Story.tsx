@@ -182,7 +182,7 @@ const S6: React.FC = () => {
   const apart = interpolate(f, [w(9, 'ঝগড়া'), w(9, 'ঝগড়া') + 30], [0, 70], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
   return (
     <AbsoluteFill>
-      <Night t={f} color="#1E2242" />
+      <Night t={f} color="#F3E7F6" />
       <Cam keys={[[0, 1.0, 50, 50], [at(31.5), 1.06, 50, 55]]}>
         <Char who="simi" x={340 - apart} y={FY} flip pose="crossed" face="sad" />
         <Char who="emon" x={740 + apart} y={FY} pose="crossed" face="annoyed" />
@@ -208,7 +208,7 @@ const S6: React.FC = () => {
         <Chip text="অভিমান" color="#5A7BD8" />
       </PopIn>
       <PopIn x={540} y={300} delay={w(9, 'ছোট')}>
-        <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 46, color: '#FFE9C9'}}>ছোট ছোট বিষয়…</div>
+        <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 46, color: '#2A2420'}}>ছোট ছোট বিষয়…</div>
       </PopIn>
       <TitleChip text="ঝগড়ার শুরু" />
     </AbsoluteFill>
@@ -222,7 +222,7 @@ const S7: React.FC = () => {
   const split = interpolate(f, [w(11, 'মনের'), w(11, 'মনের') + 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
   return (
     <AbsoluteFill>
-      <Night t={f} color="#1A1E3A" glow="rgba(240,90,60,0.25)" />
+      <Night t={f} color="#FCE9EC" glow="rgba(240,120,110,0.3)" />
       <Cam keys={[[0, 1.0, 50, 45], [110, 1.08, 50, 45]]}>
         <PopIn x={540} y={760} delay={2}>
           <HeartBroken size={420} split={split} />
@@ -250,7 +250,7 @@ const S8: React.FC = () => {
         <Char who="simi" x={250} y={SY} sit pose="crossed" face="sad" look={-1} />
         <Char who="emon" x={830} y={SY} sit pose="stand" face="sad" look={1} />
       </Cam>
-      <AbsoluteFill style={{background: 'rgba(10,12,30,0.25)'}} />
+      <AbsoluteFill style={{background: 'rgba(80,90,140,0.08)'}} />
       <TitleChip text="নীরবতা" />
     </AbsoluteFill>
   );
@@ -262,7 +262,7 @@ const S9: React.FC = () => {
   const {w} = useAt();
   return (
     <AbsoluteFill>
-      <Night t={f} color="#20284A" />
+      <Night t={f} color="#E4EEFB" />
       <Cam keys={[[0, 1.0, 50, 50], [180, 1.06, 60, 40]]}>
         <Char who="emon" x={700} y={FY} pose="chin" face="think" flip />
         <PopIn x={330} y={560} delay={w(13, 'ভাবছিল')}>
@@ -296,7 +296,7 @@ const S10: React.FC = () => {
   const {w} = useAt();
   return (
     <AbsoluteFill>
-      <Night t={f} color="#2A2148" />
+      <Night t={f} color="#F6E6F3" />
       <Cam keys={[[0, 1.0, 50, 50], [170, 1.06, 40, 40]]}>
         <Char who="simi" x={380} y={FY} pose="chin" face="sad" />
         <PopIn x={760} y={560} delay={w(15, 'ভাবছিল')}>
@@ -373,7 +373,7 @@ const S13: React.FC = () => {
         <Char who="emon" x={680} y={FY} flip pose="stand" face="sad" dim={alone} />
         <Char who="simi" x={300} y={SY} sit pose={f < at(68.4) ? 'stand' : 'wipe'} face={f < at(65.4) ? 'smile' : 'sad'} look={1} />
       </Cam>
-      <AbsoluteFill style={{background: 'radial-gradient(circle at 30% 42%, rgba(0,0,0,0) 16%, rgba(5,6,20,0.8) 48%)', opacity: alone}} />
+      <AbsoluteFill style={{background: 'radial-gradient(circle at 30% 42%, rgba(0,0,0,0) 16%, rgba(60,50,90,0.55) 48%)', opacity: alone}} />
       <PopIn x={760} y={500} delay={w(21, 'পরিশ্রম')}>
         <Briefcase size={140} />
       </PopIn>
@@ -443,7 +443,7 @@ const S16: React.FC = () => {
     <AbsoluteFill>
       <Cam keys={[[0, 1.0, 50, 55], [200, 1.08, 50, 55]]}>
         <LivingRoom t={f} night={false} />
-        <AbsoluteFill style={{background: '#1C2340', opacity: 1 - sunrise}} />
+        <AbsoluteFill style={{background: '#5E6FB0', opacity: (1 - sunrise) * 0.6}} />
         <Sofa night={false} />
         <Char who="simi" x={420} y={SY} sit pose="stand" face="happy" />
         <Char who="emon" x={660} y={SY} sit pose="stand" face="smile" flip />
@@ -467,14 +467,14 @@ const S17: React.FC = () => {
   const t2 = interpolate(f, [w(30, 'অন্যজনের'), w(30, 'অন্যজনের') + 30], [0, 1.8], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.4))});
   return (
     <AbsoluteFill>
-      <Night t={f} color="#1C2240" />
+      <Night t={f} color="#EAF2FB" />
       <Cam keys={[[0, 1.0, 50, 50], [240, 1.05, 50, 50]]}>
         <PopIn x={540} y={820} delay={3}>
           <Balance size={900} tilt={t1 + t2} left="নিজের কথা বোঝানো" right="অন্যের কথা বোঝা" />
         </PopIn>
       </Cam>
       <PopIn x={540} y={1250} delay={w(30, 'জরুরি')}>
-        <Chip text="বেশি জরুরি" color="#E7B23F" bg="#2A2F52" />
+        <Chip text="বেশি জরুরি" color="#2E7D5B" />
       </PopIn>
       <TitleChip text="শিক্ষা" />
     </AbsoluteFill>
@@ -520,7 +520,7 @@ const S19: React.FC = () => {
   const n = Math.round(interpolate(f, [at(109.84), at(112.6)], [0, q.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   return (
     <AbsoluteFill>
-      <Night t={f} color="#1A1C30" glow="rgba(255,220,160,0.28)" />
+      <Night t={f} color="#FBF1E2" glow="rgba(255,210,150,0.5)" />
       <Cam keys={[[0, 0.95, 50, 50], [at(109.6), 1.0, 50, 48], [at(112.9), 1.12, 70, 45]]}>
         <div style={{position: 'absolute', left: 110, top: 560}}>
           <OpenBook w={860} open={open}>
@@ -641,7 +641,7 @@ const Enter: React.FC<{tr: Tr; children: React.ReactNode}> = ({tr, children}) =>
 };
 
 export const Story: React.FC = () => (
-  <AbsoluteFill style={{background: '#1C2140'}}>
+  <AbsoluteFill style={{background: '#F6EBDD'}}>
     {SCENES.map(([a, b, Comp, tr], i) => {
       const from = sec(a);
       const dur = sec(b) - sec(a) + (i < SCENES.length - 1 ? OV : 0);
