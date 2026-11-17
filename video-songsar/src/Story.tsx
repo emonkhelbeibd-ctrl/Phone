@@ -345,7 +345,7 @@ const S12: React.FC = () => {
       <Cam keys={[[0, 1.35, 45, 45], [at(60.0), 1.35, 55, 42], [at(63.5), 1.5, 58, 40]]}>
         <LivingRoom t={f} rain lamp={0.8 + warm * 0.4} />
         <Sofa />
-        <Char who="simi" x={300} y={SY} sit pose="stand" face={f < at(60) ? 'sad' : 'neutral'} look={1} />
+        <Char who="simi" x={300} y={FY} pose="crossed" face={f < at(60) ? 'sad' : 'neutral'} look={1} />
         <Char who="emon" x={640} y={FY} flip pose={f < at(60) ? 'open' : 'reach'} face="smile" />
         <Ring x={250} y={380} r={100} delay={w(18, 'সময়')} />
         <PopIn x={720} y={560} delay={w(19, 'বিশ্বাস')}>
@@ -371,12 +371,12 @@ const S13: React.FC = () => {
         <LivingRoom t={f} rain lamp={0.8} />
         <Sofa />
         <Char who="emon" x={680} y={FY} flip pose="stand" face="sad" dim={alone} />
-        <Char who="simi" x={300} y={SY} sit pose={f < at(68.4) ? 'stand' : 'wipe'} face={f < at(65.4) ? 'smile' : 'sad'} look={1} />
+        <Char who="simi" x={300} y={FY} pose={f < at(68.4) ? 'stand' : 'wipe'} face={f < at(65.4) ? 'smile' : 'sad'} look={1} />
+        <PopIn x={850} y={340} delay={w(21, "পরিশ্রম")}>
+          <Briefcase size={120} />
+        </PopIn>
       </Cam>
       <AbsoluteFill style={{background: 'radial-gradient(circle at 30% 42%, rgba(0,0,0,0) 16%, rgba(60,50,90,0.55) 48%)', opacity: alone}} />
-      <PopIn x={760} y={500} delay={w(21, 'পরিশ্রম')}>
-        <Briefcase size={140} />
-      </PopIn>
       <Stamp text="একা লাগে" x={600} y={330} delay={w(22, 'একা')} rot={-5} />
       <TitleChip text="অভিমানের কথা" />
     </AbsoluteFill>
