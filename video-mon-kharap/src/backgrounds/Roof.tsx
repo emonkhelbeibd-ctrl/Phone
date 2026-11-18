@@ -13,10 +13,10 @@ export const Rooftop: React.FC<{t: number; warm?: number}> = ({t, warm = 0}) => 
       <svg width={WIDTH} height={HEIGHT} viewBox={`0 0 ${WIDTH} ${HEIGHT}`}>
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#8E8CD8" />
-            <stop offset="0.45" stopColor="#C3B4EA" />
-            <stop offset="0.75" stopColor="#F6C3D3" />
-            <stop offset="1" stopColor="#FBE0C8" />
+            <stop offset="0" stopColor="#6FA6D6" />
+            <stop offset="0.45" stopColor="#A9CBE8" />
+            <stop offset="0.75" stopColor="#F8C9B0" />
+            <stop offset="1" stopColor="#FDE6C6" />
           </linearGradient>
           <radialGradient id="moonGlow" cx="0.5" cy="0.5" r="0.5">
             <stop offset="0" stopColor="#FFF6D8" stopOpacity={0.9} />
@@ -41,10 +41,10 @@ export const Rooftop: React.FC<{t: number; warm?: number}> = ({t, warm = 0}) => 
           [520, 930, 190, 370], [700, 800, 140, 500], [830, 900, 250, 400],
         ].map(([x, y, w, h], i) => (
           <g key={i}>
-            <rect x={x} y={y} width={w} height={h} fill={i % 2 ? '#8E86C4' : '#9C93CF'} />
+            <rect x={x} y={y} width={w} height={h} fill={i % 2 ? '#6F98B0' : '#7FA8BE'} />
             {Array.from({length: 6}).map((_, k) => {
               const on = (Math.floor(t / 45) + i + k) % 3 !== 0;
-              return <rect key={k} x={x + 20 + (k % 2) * (w / 2 - 6)} y={y + 30 + Math.floor(k / 2) * 70} width={26} height={34} fill={on ? '#FFE6A8' : '#B4AEDB'} />;
+              return <rect key={k} x={x + 20 + (k % 2) * (w / 2 - 6)} y={y + 30 + Math.floor(k / 2) * 70} width={26} height={34} fill={on ? '#FFE6A8' : '#A6C4D4'} />;
             })}
           </g>
         ))}
@@ -63,13 +63,13 @@ export const Rooftop: React.FC<{t: number; warm?: number}> = ({t, warm = 0}) => 
           );
         })}
         {/* parapet wall */}
-        <rect x={0} y={1180} width={WIDTH} height={180} fill="#E9C9B5" {...ink} />
-        <rect x={0} y={1170} width={WIDTH} height={22} fill="#F3DCCB" {...ink} />
+        <rect x={0} y={1180} width={WIDTH} height={180} fill="#CFE0D6" {...ink} />
+        <rect x={0} y={1170} width={WIDTH} height={22} fill="#E2EEE7" {...ink} />
         {Array.from({length: 9}).map((_, i) => (
-          <line key={i} x1={i * 130 + 40} y1={1192} x2={i * 130 + 40} y2={1360} stroke="#D7B39E" strokeWidth={4} />
+          <line key={i} x1={i * 130 + 40} y1={1192} x2={i * 130 + 40} y2={1360} stroke="#B5CDBF" strokeWidth={4} />
         ))}
         {/* roof floor */}
-        <rect x={0} y={1360} width={WIDTH} height={HEIGHT - 1360} fill="#D8C2B4" />
+        <rect x={0} y={1360} width={WIDTH} height={HEIGHT - 1360} fill="#E6D3BE" />
         <line x1={0} y1={1360} x2={WIDTH} y2={1360} stroke={C.ink} strokeWidth={5} />
         {/* plant pots */}
         <g transform="translate(70,1240)">

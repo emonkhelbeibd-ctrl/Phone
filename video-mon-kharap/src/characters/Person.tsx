@@ -8,16 +8,16 @@ export type Who = 'emon' | 'simi';
 // Both characters: fair ("white tone") skin.
 export const LOOK = {
   emon: {
-    blazer: '#1F3358',
-    blazerDark: '#162644',
+    blazer: '#2E6B7E',
+    blazerDark: '#24576A',
     shirt: '#FAFAF7',
-    pants: '#26324A',
+    pants: '#3A3F4E',
     skin: '#F6D6BE',
   },
   simi: {
-    dress: '#1B1A1F',
+    dress: '#8A2846',
     gold: '#D9B45A',
-    silver: '#D8D8DC',
+    silver: '#F3D9A4',
     skin: '#F8DAC4',
   },
 };

@@ -6,9 +6,9 @@ const ink = {stroke: C.ink, strokeWidth: 5, strokeLinejoin: 'round' as const};
 
 // Living room, night (blue, lamp glow, rain on window) or day (warm).
 export const LivingRoom: React.FC<{t: number; night?: boolean; rain?: boolean; lamp?: number}> = ({t, night = true, rain = false, lamp = 1}) => {
-  const wall = night ? '#E6E0F4' : '#F6EBDD';
-  const wallLow = night ? '#D8D0EC' : '#EEDCC6';
-  const floor = night ? '#C9A88C' : '#D7B48F';
+  const wall = night ? '#E6E0F4' : '#E2F2EA';
+  const wallLow = night ? '#D8D0EC' : '#D3E8DD';
+  const floor = night ? '#C9A88C' : '#E2C29E';
   const sky = night ? '#5E6FB0' : '#BFE6F2';
   const flick = 0.92 + Math.sin(t / 5) * 0.03 + Math.sin(t / 2.3) * 0.02;
   const ang = ((t / 30) * 6) % 360; // clock second hand
@@ -45,8 +45,8 @@ export const LivingRoom: React.FC<{t: number; night?: boolean; rain?: boolean; l
         )}
         <line x1={750} y1={300} x2={750} y2={660} stroke={C.ink} strokeWidth={6} />
         <line x1={600} y1={480} x2={900} y2={480} stroke={C.ink} strokeWidth={6} />
-        <path d="M570 270 Q610 470 580 690 L540 690 L540 270 Z" fill={night ? '#F29C9C' : '#F4A6A0'} {...ink} />
-        <path d="M930 270 Q890 470 920 690 L960 690 L960 270 Z" fill={night ? '#F29C9C' : '#F4A6A0'} {...ink} />
+        <path d="M570 270 Q610 470 580 690 L540 690 L540 270 Z" fill={night ? '#F29C9C' : '#F7BE8F'} {...ink} />
+        <path d="M930 270 Q890 470 920 690 L960 690 L960 270 Z" fill={night ? '#F29C9C' : '#F7BE8F'} {...ink} />
         {/* wall clock */}
         <g transform="translate(250,380)">
           <circle r={74} fill="#FFFDF6" {...ink} />
@@ -71,7 +71,7 @@ export const LivingRoom: React.FC<{t: number; night?: boolean; rain?: boolean; l
           <line key={i} x1={0} y1={1420 + i * 90} x2={WIDTH} y2={1420 + i * 90} stroke={night ? '#B8977B' : '#C4A07B'} strokeWidth={3} />
         ))}
         {/* rug */}
-        <ellipse cx={540} cy={1440} rx={430} ry={60} fill={night ? '#F2B8C6' : '#F6C6B6'} opacity={0.75} />
+        <ellipse cx={540} cy={1440} rx={430} ry={60} fill={night ? '#F2B8C6' : '#C9B8EC'} opacity={0.75} />
       </svg>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 50%, rgba(120,90,130,0.18) 100%)'}} />
     </AbsoluteFill>
@@ -80,8 +80,8 @@ export const LivingRoom: React.FC<{t: number; night?: boolean; rain?: boolean; l
 
 // Sofa back + seat (characters sit in front of it); width centred at cx
 export const Sofa: React.FC<{cx?: number; y?: number; w?: number; night?: boolean}> = ({cx = 540, y = 960, w = 860, night = true}) => {
-  const col = night ? '#8FB6E8' : '#8FB6E8';
-  const dark = night ? '#77A0D6' : '#77A0D6';
+  const col = night ? '#8FB6E8' : '#EBBE5E';
+  const dark = night ? '#77A0D6' : '#D9A845';
   const x = cx - w / 2;
   return (
     <svg width={WIDTH} height={HEIGHT} style={{position: 'absolute', left: 0, top: 0}}>
